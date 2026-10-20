@@ -8,7 +8,7 @@ int main() {
 	float a[100];
 	float b[100];
 
-	cout << "Введіть розмір множини a";
+	cout << "Введіть розмір множини a: ";
 	cin >> a_size;
 	while (cin.fail() || a_size <= 0) {
 		cin.clear();
@@ -17,7 +17,7 @@ int main() {
 		cin >> a_size;
 	}
 
-	cout << "Введіть елементи множини a";
+	cout << "Введіть елементи множини a: ";
 	for (int i = 0; i < a_size; i++) {
 		cin >> a[i];
 		while (cin.fail()) {
@@ -28,7 +28,7 @@ int main() {
 		}
 	}
 
-	cout << "Введіть розмір множини b";
+	cout << "Введіть розмір множини b: ";
 	cin >> b_size;
 	while (cin.fail() || b_size <= 0) {
 		cin.clear();
@@ -37,7 +37,7 @@ int main() {
 		cin >> b_size;
 	}
 
-	cout << "Введіть елементи множини b";
+	cout << "Введіть елементи множини b: ";
 	for (int i = 0; i < b_size; i++) {
 		cin >> b[i];
 		while (cin.fail()) {
@@ -48,6 +48,7 @@ int main() {
 		}
 	}
 
+	cout << "Відношення a x b задане рівнянням: 5 * a - b > 3" << endl;
 
 	int space_total = 0;
 	int space_per_box[100];
@@ -178,11 +179,12 @@ int main() {
 
 		bool is_sets_equal = true;
 		for (int i = 0; i < a_size; i++) {
-			if (a[i] == b[i]) {
+			if (a[i] != b[i]) {
 				is_sets_equal = false;
 				break;
 			}
 		}
+		
 		if (is_sets_equal) {
 
 			// Транзитивне
@@ -236,3 +238,4 @@ int main() {
 
 
 	return 0;
+}
