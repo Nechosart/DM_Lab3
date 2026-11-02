@@ -236,6 +236,83 @@ int main() {
 		}
 	}
 
+    
+    bool success = true;
+    for (int i = 0; i < a_size; i++) {
+        int n = 0;
+        for (int j = 0; j < b_size; j++) {
+            if (values[i][j] == true) {
+                n++;
+            }
+        }
+        if (n >= 2) {
+            success = false;
+            break;
+        }
+    }
+    if (success) {
+        cout << "Відношення є функціональним" << endl;
+    } else {
+        cout << "Відношення не є функціональним" << endl;
+    }
+
+    success = true;
+    for (int j = 0; j < b_size; j++) {
+        int n = 0;
+        for (int i = 0; i < a_size; i++) {
+            if (values[i][j] == true) {
+                n++;
+            }
+        }
+        if (n >= 2) {
+            success = false;
+            break;
+        }
+    }
+    if (success) {
+        cout << "Відношення є ін'єктивним" << endl;
+    } else {
+        cout << "Відношення не є ін'єктивним" << endl;
+    }
+
+    success = true;
+    for (int j = 0; j < b_size; j++) {
+        int n = 0;
+        for (int i = 0; i < a_size; i++) {
+            if (values[i][j] == true) {
+                n++;
+            }
+        }
+        if (n < 1) {
+            success = false;
+            break;
+        }
+    }
+    if (success) {
+        cout << "Відношення є сюр'єктивним" << endl;
+    } else {
+        cout << "Відношення не є сюр'єктивним" << endl;
+    }
+
+    success = true;
+    for (int j = 0; j < b_size; j++) {
+        int n = 0;
+        for (int i = 0; i < a_size; i++) {
+            if (values[i][j] == true) {
+                n++;
+            }
+        }
+        if (n != 1) {
+            success = false;
+            break;
+        }
+    }
+    if (success) {
+        cout << "Відношення є бієктивним" << endl;
+    } else {
+        cout << "Відношення не є бієктивним" << endl;
+    }
+
 
 	return 0;
 }
